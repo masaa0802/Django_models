@@ -40,6 +40,9 @@ class Students(models.Model):
   class Meta:
     db_table = 'students'
 
+  def __str__(self):
+    return f'{self.pk}, {self.name}, {self.age}'
+
 class Schools(models.Model):
   name = models.CharField(max_length=20)
   prefecture = models.ForeignKey(
@@ -89,3 +92,5 @@ class Books(models.Model):
   
   class Meta:
     db_table = 'books'
+
+
